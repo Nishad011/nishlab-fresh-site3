@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nishlab Creations | Free Live Demo Lecture</title>
+<style>
+:root{--n:#061735;--n2:#0d2c5c;--g:#f4b400;--bg:#f5f7fb;--w:#fff;--t:#172033;--m:#64748b;--l:#dce4ef;--green:#15965a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--t)}
+a{text-decoration:none}.header{position:sticky;top:0;z-index:50;background:rgba(6,23,53,.98)}.nav{max-width:1300px;margin:auto;min-height:76px;padding:9px 22px;display:flex;align-items:center;gap:22px}.brand{display:flex;align-items:center;gap:10px;color:#fff;min-width:220px}.brand img{width:50px;height:50px;object-fit:contain;background:#000;border-radius:7px}.brand b{display:block;letter-spacing:2px}.brand small{color:var(--g);letter-spacing:2.5px}.menu{display:flex;justify-content:center;gap:3px;flex:1}.menu a{color:#dce6f5;font-size:12px;padding:10px;border-radius:8px}.menu a:hover,.menu a.active{background:var(--n2);color:#fff}.login{background:var(--g);color:var(--n);font-weight:900;padding:12px 15px;border-radius:8px;font-size:12px}
+
+.hero{background:linear-gradient(125deg,#030c1d,#0b2857 65%,#123d7d);color:#fff;position:relative;overflow:hidden}
+.marquee{background:var(--g);color:var(--n);font-weight:900;font-size:11px;letter-spacing:2px;padding:9px 0;white-space:nowrap;overflow:hidden}
+.marquee span{display:inline-block;padding-left:100%;animation:scroll 22s linear infinite}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+.hero-in{max-width:1000px;margin:auto;padding:70px 22px 55px;text-align:center}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(244,180,0,.55);color:#ffd35c;border-radius:999px;padding:8px 14px;font-size:11px;font-weight:900;letter-spacing:1.5px}
+.hero h1{font-size:46px;line-height:1.08;letter-spacing:-1.5px;margin:16px 0}.hero h1 span{color:var(--g)}
+.hero p{max-width:780px;margin:0 auto 12px;color:#d5e0ef;font-size:15px;line-height:1.85}
+.free-chip{display:inline-block;margin-top:8px;background:var(--green);color:#fff;font-weight:900;font-size:12px;padding:9px 16px;border-radius:20px;letter-spacing:1px}
+
+.wrap{max-width:1150px;margin:auto;padding:60px 22px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-30px;position:relative;z-index:2}
+.feature{background:#fff;border:1px solid var(--l);border-radius:15px;padding:22px 18px;box-shadow:0 15px 40px rgba(6,23,53,.08);text-align:center}
+.feature .icon{width:42px;height:42px;margin:0 auto 12px;border-radius:10px;background:#fff2c7;color:#8a6200;display:grid;place-items:center;font-size:19px}
+.feature h3{margin:0 0 5px;color:var(--n);font-size:13px}.feature p{margin:0;color:var(--m);font-size:10px;line-height:1.6}
+
+.intro{text-align:center;max-width:800px;margin:60px auto 35px}.intro .kicker{color:#a87400}.intro h2{font-size:34px;color:var(--n);margin:8px}.intro p{color:var(--m);font-size:14px;line-height:1.75}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.step{background:#fff;border:1px solid var(--l);border-radius:16px;padding:26px;text-align:center}
+.step .n{width:38px;height:38px;margin:0 auto 14px;border-radius:10px;background:var(--n);color:var(--g);display:grid;place-items:center;font-weight:900}
+.step h3{color:var(--n);margin:0 0 8px;font-size:15px}.step p{color:var(--m);font-size:12px;line-height:1.7;margin:0}
+
+.slots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.slot{background:#fff;border:2px solid var(--l);border-radius:16px;padding:26px;cursor:pointer;transition:.2s;position:relative}
+.slot:hover{border-color:var(--g);box-shadow:0 15px 35px rgba(6,23,53,.08)}
+.slot.selected{border-color:var(--g);background:#fffdf3}
+.slot .day{font-size:11px;font-weight:900;color:var(--g);letter-spacing:1.5px}
+.slot h3{color:var(--n);font-size:22px;margin:8px 0 4px}
+.slot span{color:var(--m);font-size:12px}
+.slot input{position:absolute;top:20px;right:20px;width:18px;height:18px;accent-color:var(--g)}
+
+.form-card{background:#fff;border:1px solid var(--l);border-radius:20px;padding:32px;margin-top:35px;box-shadow:0 15px 40px rgba(6,23,53,.06)}
+.form-card h2{margin:0 0 6px;color:var(--n);font-size:24px}.form-card .sub{color:var(--m);font-size:11px;margin:0 0 22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}
+label{font-size:10px;font-weight:900;color:var(--n)}
+input,select{width:100%;border:1px solid var(--l);border-radius:8px;padding:11px;font:inherit;font-size:12px;outline:none;background:#fff}
+input:focus,select:focus{border-color:#6b96d2;box-shadow:0 0 0 3px rgba(33,102,194,.08)}
+.submit{border:0;width:100%;margin-top:16px;padding:14px;border-radius:9px;background:var(--g);color:var(--n);font-weight:900;cursor:pointer;font-size:13px}
+.note{font-size:10px;color:var(--m);text-align:center;margin-top:12px}
+#success{display:none;background:#eaf8f0;color:var(--green);padding:12px;border-radius:8px;font-size:11px;font-weight:800;margin-top:14px;text-align:center}
+
+.cta{margin-top:50px;background:var(--n);color:#fff;border-radius:20px;text-align:center;padding:40px 22px}.cta h2{font-size:28px;margin:0 0 8px}.cta p{color:#d5e0ef;font-size:13px;margin:0 0 18px}.btn{display:inline-block;padding:13px 20px;border-radius:9px;background:var(--g);color:var(--n);font-weight:900;font-size:12px}
+footer{background:#040d20;color:#cbd6e5;padding:32px 22px}.foot{max-width:1300px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:11px}.foot b{color:#fff;letter-spacing:2px}.foot b span{color:var(--g)}
+
+@media(max-width:900px){.menu{display:none}.login{margin-left:auto}.features,.steps,.slots,.grid{grid-template-columns:1fr}}
+@media(max-width:600px){.brand div{display:none}.hero-in,.wrap{padding-left:16px;padding-right:16px}.hero h1{font-size:32px}}
+</style>
+</head>
+<body>
+<header class="header"><div class="nav">
+<a class="brand" href="index.html"><img src="nishlab-logo.png" alt="Nishlab Creations"><div><b>NISHLAB</b><small>CREATIONS</small></div></a>
+<nav class="menu"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="about.html">About Us</a><a href="workshops.html">Workshops</a><a href="join.html">Join Us</a><a href="videos.html">Free Videos</a><a href="plans.html">Plans</a><a class="active" href="demo.html">Free Demo</a></nav>
+<a class="login" href="login.html">Student Login</a>
+</div></header>
+
+<section class="hero">
+<div class="marquee"><span>FREE LIVE DEMO LECTURE &nbsp;&nbsp;•&nbsp;&nbsp; FREE LIVE DEMO LECTURE &nbsp;&nbsp;•&nbsp;&nbsp; FREE LIVE DEMO LECTURE &nbsp;&nbsp;•&nbsp;&nbsp; FREE LIVE DEMO LECTURE &nbsp;&nbsp;•&nbsp;&nbsp; FREE LIVE DEMO LECTURE &nbsp;&nbsp;•&nbsp;&nbsp;</span></div>
+<div class="hero-in">
+<div class="badge">EXPERIENCE OUR TRAINING BEFORE YOU ENROLL</div>
+<h1>Join Our Live Instructor-Led <span>Demo Lecture.</span></h1>
+<p>Experience how we deliver practical, industry-focused training that makes you job-ready. Get insights into our course structure, software training, hands-on projects, and career guidance designed to build in-demand skills and accelerate your career growth.</p>
+<span class="free-chip">100% FREE · LIVE ONLINE SESSION</span>
+</div>
+</section>
+
+<main class="wrap">
+<div class="features">
+<div class="feature"><div class="icon">🎥</div><h3>Live Online Session</h3><p>Real-time interactive class, not a recording.</p></div>
+<div class="feature"><div class="icon">👨‍🏫</div><h3>Instructor-Led Training</h3><p>Directly taught by our expert trainers.</p></div>
+<div class="feature"><div class="icon">⚙</div><h3>Practical & Industry-Focused</h3><p>See real software workflows in action.</p></div>
+<div class="feature"><div class="icon">🎯</div><h3>Career & Placement Guidance</h3><p>Understand the path from learning to job-ready.</p></div>
+</div>
+
+<div class="intro"><div class="kicker">How It Works</div><h2>3 Simple Steps</h2></div>
+<div class="steps">
+<div class="step"><div class="n">01</div><h3>Choose Your Slot</h3><p>Select the day that is most convenient for you — Tuesday or Thursday.</p></div>
+<div class="step"><div class="n">02</div><h3>Register For Free</h3><p>Fill in your details below. It takes less than a minute.</p></div>
+<div class="step"><div class="n">03</div><h3>Join The Live Class</h3><p>You'll receive the Google Meet joining link directly on your email.</p></div>
+</div>
+
+<div class="intro" style="margin-top:60px"><div class="kicker">Demo Slots</div><h2>Choose Your Convenient Demo Slot</h2><p>Pick whichever day suits you — same live session content on both days.</p></div>
+<form onsubmit="submitForm(event)">
+<div class="slots">
+<label class="slot" id="slotTue"><input type="radio" name="demoDay" value="Tuesday" required onchange="selectSlot('slotTue')"><div class="day">SLOT 01</div><h3>Tuesday</h3><span>9:00 PM – 10:00 PM IST</span></label>
+<label class="slot" id="slotThu"><input type="radio" name="demoDay" value="Thursday" onchange="selectSlot('slotThu')"><div class="day">SLOT 02</div><h3>Thursday</h3><span>9:00 PM – 10:00 PM IST</span></label>
+</div>
+
+<div class="form-card" id="registration">
+<h2>Register For Free Demo</h2>
+<div class="sub">Select the day that is most convenient for you. After registration, you will receive the Google Meet joining link directly on your email.</div>
+<div class="grid">
+<div class="field"><label>FULL NAME</label><input id="d_name" required placeholder="Your name"></div>
+<div class="field"><label>PHONE NUMBER</label><input id="d_phone" required type="tel" placeholder="+91"></div>
+<div class="field full"><label>EMAIL</label><input id="d_email" required type="email" placeholder="you@example.com"></div>
+<div class="field full"><label>COURSE INTEREST</label><select id="d_course" required><option value="">Select a course</option><option>AutoCAD</option><option>SolidWorks</option><option>CATIA V5</option><option>ANSYS</option><option>Python</option><option>Advanced Excel + VBA</option><option>Placement Program (All Courses)</option></select></div>
+</div>
+<button class="submit" type="submit" id="demoSubmitBtn">REGISTER FOR FREE DEMO →</button>
+<div class="note">Google Meet link will be sent to your email after registration.</div>
+<div id="success">Thank you! Your demo registration has been recorded and sent to our team.</div>
+<div id="formError" style="display:none;color:#c53d3d;font-size:11px;font-weight:800;margin-top:10px;text-align:center">Something went wrong. Please try again or WhatsApp us directly.</div>
+</div>
+</form>
+
+<section class="cta"><h2>Not Sure Which Slot to Pick?</h2><p>Message us directly and we'll help you choose the right time.</p><a class="btn" href="join.html">CONTACT NISHLAB</a></section>
+</main>
+
+<footer><div class="foot"><div><b>NISHLAB <span>CREATIONS</span></b><br>LEARN. CREATE. GET HIRED.</div><div>Online Engineering Software Training Institute</div><div>+91 84240 99617 · nishad@nishlabcreations.com</div></div></footer>
+
+<script>
+function selectSlot(id){
+  document.querySelectorAll('.slot').forEach(s=>s.classList.remove('selected'));
+  document.getElementById(id).classList.add('selected');
+}
+// Paste your deployed Google Apps Script Web App URL below (ends in /exec)
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyoy2NIWVPHsmsPIlF6bt8iKp3-uaZSfo-zP8uPRSm4XCSqRkBPthyYNHiy55HIExlX4A/exec";
+
+function submitForm(e){
+  e.preventDefault();
+  var picked = document.querySelector('input[name="demoDay"]:checked');
+  if(!picked){ alert('Please choose a demo slot (Tuesday or Thursday).'); return; }
+
+  const btn = document.getElementById('demoSubmitBtn');
+  const successBox = document.getElementById('success');
+  const errorBox = document.getElementById('formError');
+  errorBox.style.display = 'none';
+
+  const payload = {
+    formType: "Free Demo",
+    name: document.getElementById('d_name').value,
+    phone: document.getElementById('d_phone').value,
+    email: document.getElementById('d_email').value,
+    courseInterest: document.getElementById('d_course').value,
+    demoDay: picked.value
+  };
+
+  function finishUp(){
+    successBox.style.display='block';
+    e.target.reset();
+    document.querySelectorAll('.slot').forEach(s=>s.classList.remove('selected'));
+    btn.disabled = false;
+    btn.textContent = 'REGISTER FOR FREE DEMO →';
+  }
+
+  if(GOOGLE_SCRIPT_URL.indexOf('PASTE_YOUR') !== -1){
+    // Script URL not configured yet — fall back to local confirmation only
+    finishUp();
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'SUBMITTING...';
+
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  })
+  .then(finishUp)
+  .catch(() => {
+    errorBox.style.display='block';
+    btn.disabled = false;
+    btn.textContent = 'REGISTER FOR FREE DEMO →';
+  });
+}
+</script>
+</body>
+</html>

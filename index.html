@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nishlab Creations | Learn. Create. Get Hired.</title>
+<style>
+:root{
+  --navy:#071a3a; --navy2:#0d2b5d; --gold:#f4b400; --white:#fff;
+  --light:#f5f7fb; --text:#172033; --muted:#64748b; --line:#dbe2ec;
+  --green:#19a463;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:var(--light)}
+a{text-decoration:none}
+.header{
+  position:sticky;top:0;z-index:50;background:rgba(7,26,58,.97);
+  border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)
+}
+.nav{
+  max-width:1250px;margin:auto;min-height:78px;padding:10px 24px;
+  display:flex;align-items:center;gap:28px
+}
+.brand{display:flex;align-items:center;gap:11px;color:#fff;min-width:225px}
+.brand img{width:52px;height:52px;object-fit:contain;border-radius:8px;background:#000}
+.brand strong{display:block;font-size:17px;letter-spacing:2px}
+.brand span{display:block;font-size:10px;letter-spacing:2.5px;color:var(--gold);margin-top:2px}
+.menu{display:flex;gap:5px;flex:1;justify-content:center}
+.menu a{color:#dbe5f5;font-size:13px;padding:10px 11px;border-radius:8px}
+.menu a:hover{background:#123b7a;color:#fff}
+.login{background:var(--gold);color:#071a3a;font-weight:800;padding:12px 16px;border-radius:9px;font-size:13px;white-space:nowrap}
+
+.hero{
+  background:
+   radial-gradient(circle at 80% 20%,rgba(244,180,0,.18),transparent 27%),
+   linear-gradient(125deg,#050f23,#0b2858 60%,#123b7a);
+  color:#fff;min-height:610px;display:flex;align-items:center;overflow:hidden
+}
+.hero-inner{
+  max-width:1250px;width:100%;margin:auto;padding:75px 24px;
+  display:grid;grid-template-columns:1.18fr .82fr;gap:55px;align-items:center
+}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(244,180,0,.55);
+  color:#ffd35c;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:800;letter-spacing:1px}
+h1{font-size:60px;line-height:1.02;margin:18px 0 20px;letter-spacing:-2px}
+h1 span{color:var(--gold)}
+.hero p{font-size:18px;line-height:1.7;color:#dbe5f5;max-width:680px}
+.ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{padding:14px 20px;border-radius:10px;font-weight:800;display:inline-block}
+.primary{background:var(--gold);color:#071a3a}
+.secondary{border:1px solid rgba(255,255,255,.35);color:#fff;background:rgba(255,255,255,.05)}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:35px;max-width:700px
+}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:17px;border-radius:12px}
+.stat b{display:block;font-size:27px;color:var(--gold)}
+.stat small{color:#dbe5f5}
+
+.hero-card{
+  background:#fff;color:var(--text);border-radius:22px;padding:28px;
+  box-shadow:0 25px 70px rgba(0,0,0,.28);border:1px solid #e8edf5
+}
+.hero-card .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.hero-card h2{margin:0;font-size:22px;color:var(--navy)}
+.tag{background:#fff4cc;color:#805f00;padding:7px 10px;border-radius:7px;font-size:11px;font-weight:800}
+.path{display:grid;gap:10px}
+.path-item{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:11px}
+.num{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800}
+.path-item strong{font-size:13px}.path-item span{display:block;font-size:11px;color:var(--muted)}
+.card-note{margin-top:17px;background:#eef7f2;border-left:4px solid var(--green);padding:12px;font-size:12px}
+
+.section{max-width:1250px;margin:auto;padding:75px 24px}
+.section-head{text-align:center;max-width:760px;margin:0 auto 38px}
+.eyebrow{color:#b17d00;font-weight:900;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.section h2{font-size:38px;color:var(--navy);margin:8px 0 10px}
+.section-head p{color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feature{background:#fff;border:1px solid var(--line);border-radius:15px;padding:24px}
+.icon{width:42px;height:42px;border-radius:10px;background:#fff2c7;color:#8a6200;display:grid;place-items:center;font-size:20px;margin-bottom:15px}
+.feature h3{margin:0 0 8px;color:var(--navy);font-size:17px}
+.feature p{margin:0;color:var(--muted);font-size:13px}
+
+.program{background:var(--navy);color:#fff}
+.program .section h2{color:#fff}
+.program .section-head p{color:#c9d5e8}
+.program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.course{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);padding:20px;border-radius:14px}
+.course b{color:var(--gold);font-size:14px}.course h3{font-size:17px;margin:7px 0}.course p{font-size:12px;color:#c9d5e8;margin:0}
+
+.final{
+  max-width:1250px;margin:0 auto;padding:70px 24px;text-align:center
+}
+.final-box{background:linear-gradient(120deg,#071a3a,#123b7a);border-radius:22px;padding:50px 25px;color:#fff}
+.final-box h2{font-size:40px;margin:0 0 10px}.final-box p{color:#dbe5f5;margin:0 0 24px}
+
+.countdown-wrap{max-width:1250px;margin:0 auto;padding:0 24px 70px}
+.countdown-box{background:linear-gradient(120deg,#0b2857,#071a3a);border:1px solid rgba(244,180,0,.3);border-radius:22px;padding:40px 30px;display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:center;color:#fff;position:relative;overflow:hidden}
+.countdown-box:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(244,180,0,.15),transparent 35%)}
+.countdown-left{position:relative;z-index:1}
+.countdown-left .eyebrow{color:var(--gold)}
+.countdown-left h2{font-size:32px;margin:8px 0 10px;color:#fff}
+.countdown-left p{color:#dbe5f5;font-size:13px;line-height:1.7;margin:0 0 18px;max-width:480px}
+.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;position:relative;z-index:1}
+.timer div{background:rgba(255,255,255,.08);border:1px solid rgba(244,180,0,.35);border-radius:14px;padding:16px 8px;text-align:center}
+.timer b{display:block;font-size:32px;color:var(--gold);font-variant-numeric:tabular-nums}
+.timer span{font-size:9px;letter-spacing:1.5px;color:#c9d5e8;text-transform:uppercase}
+@media(max-width:900px){.countdown-box{grid-template-columns:1fr}}
+@media(max-width:600px){.timer{grid-template-columns:repeat(2,1fr);gap:8px}.countdown-box{padding:28px 20px}}
+
+footer{background:#050f23;color:#c9d5e8;padding:35px 24px}
+.footer-inner{max-width:1250px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;font-size:12px}
+.footer-brand{color:#fff;font-weight:800;letter-spacing:2px}.footer-brand span{color:var(--gold)}
+
+@media(max-width:980px){
+ .menu{display:none}.hero-inner{grid-template-columns:1fr}.hero-card{max-width:600px}
+ .features,.program-grid{grid-template-columns:repeat(2,1fr)}
+ h1{font-size:48px}
+}
+@media(max-width:600px){
+ .nav{padding:10px 15px}.brand{min-width:auto}.brand div{display:none}.login{margin-left:auto}
+ .hero-inner{padding:55px 18px}.hero{min-height:auto}h1{font-size:40px}
+ .stats{grid-template-columns:1fr}.features,.program-grid{grid-template-columns:1fr}
+ .section{padding:55px 18px}.final{padding:45px 18px}.final-box h2{font-size:30px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="nav">
+    <a class="brand" href="index.html">
+      <img src="nishlab-logo.png" alt="Nishlab Creations Logo">
+      <div><strong>NISHLAB</strong><span>CREATIONS</span></div>
+    </a>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About Us</a>
+      <a href="workshops.html">Workshops</a>
+      <a href="join.html">Join Us</a>
+      <a href="videos.html">Free Videos</a>
+      <a href="plans.html">Plans</a>
+      <a href="demo.html">Free Demo</a>
+    </nav>
+    <a class="login" href="login.html">Student Login</a>
+  </div>
+</header>
+
+<section class="hero">
+ <div class="hero-inner">
+  <div>
+    <div class="badge">ONLINE ENGINEERING SOFTWARE TRAINING INSTITUTE</div>
+    <h1>LEARN. CREATE.<br><span>GET HIRED.</span></h1>
+    <p>Build practical engineering skills through a structured pathway covering CAD, CAE, automation and career readiness — from zero to placement-ready.</p>
+    <div class="ctas">
+      <a class="btn primary" href="courses.html">Explore Courses</a>
+      <a class="btn secondary" href="join.html">Join Nishlab Creations</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>7</b><small>Professional Modules</small></div>
+      <div class="stat"><b>204</b><small>Total Training Hours</small></div>
+      <div class="stat"><b>102</b><small>Training Days · 2 hrs/day</small></div>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="top"><h2>One Structured Pathway</h2><span class="tag">CAREER READY</span></div>
+    <div class="path">
+      <div class="path-item"><div class="num">1</div><div><strong>CAD Design</strong><span>AutoCAD · SolidWorks · CATIA V5</span></div></div>
+      <div class="path-item"><div class="num">2</div><div><strong>CAE & Simulation</strong><span>ANSYS Workbench</span></div></div>
+      <div class="path-item"><div class="num">3</div><div><strong>Engineering Automation</strong><span>Python · Advanced Excel/VBA</span></div></div>
+      <div class="path-item"><div class="num">4</div><div><strong>Career Preparation</strong><span>Resume · Portfolio · LinkedIn · Interviews</span></div></div>
+    </div>
+    <div class="card-note"><strong>Program includes:</strong> Recorded Hinglish video lessons, live project mentorship, lifetime doubt support and portfolio-ready capstone work.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head">
+   <div class="eyebrow">Why Nishlab Creations</div>
+   <h2>More Than Software Training</h2>
+   <p>Every module is designed around practical learning, projects and career readiness.</p>
+ </div>
+ <div class="features">
+   <div class="feature"><div class="icon">⚙</div><h3>Practical Learning</h3><p>Move beyond commands with structured engineering workflows and hands-on practice.</p></div>
+   <div class="feature"><div class="icon">◆</div><h3>Capstone Projects</h3><p>Build industry-style projects that can strengthen your engineering portfolio.</p></div>
+   <div class="feature"><div class="icon">◎</div><h3>Mentor Support</h3><p>Live project mentorship plus recorded lessons and lifetime doubt support.</p></div>
+   <div class="feature"><div class="icon">✓</div><h3>Career Track</h3><p>Resume, portfolio, LinkedIn positioning and mock technical and HR interviews.</p></div>
+ </div>
+</section>
+
+<section class="program">
+ <div class="section">
+  <div class="section-head">
+    <div class="eyebrow" style="color:#f4b400">Professional Program</div>
+    <h2>7 Power-Packed Modules</h2>
+    <p>204 hours across 102 training days, structured at 2 hours per day.</p>
+  </div>
+  <div class="program-grid">
+    <div class="course"><b>01 · 24 HOURS · 12 DAYS</b><h3>AutoCAD Professional</h3><p>2D drafting, documentation, layouts, plotting and introductory 3D.</p></div>
+    <div class="course"><b>02 · 48 HOURS · 24 DAYS</b><h3>SolidWorks Professional</h3><p>Parametric modelling through advanced assemblies, sheet metal, weldments, surfacing and automation.</p></div>
+    <div class="course"><b>03 · 30 HOURS · 15 DAYS</b><h3>CATIA V5 Professional</h3><p>Sketcher, Part Design, Assembly Design, Drafting and Generative Shape Design.</p></div>
+    <div class="course"><b>04 · 36 HOURS · 18 DAYS</b><h3>ANSYS Workbench</h3><p>FEA, structural, contact, modal, thermal, fatigue and introductory CFD.</p></div>
+    <div class="course"><b>05 · 24 HOURS · 12 DAYS</b><h3>Python for Engineers</h3><p>Python, NumPy, Pandas, Matplotlib and engineering automation.</p></div>
+    <div class="course"><b>06 · 18 HOURS · 9 DAYS</b><h3>Advanced Excel + VBA</h3><p>Advanced formulas, dashboards, VBA and engineering workflow automation.</p></div>
+    <div class="course"><b>07 · 24 HOURS · 12 DAYS</b><h3>Interview, Resume & Portfolio</h3><p>ATS resume, portfolio, LinkedIn positioning and mock interviews.</p></div>
+  </div>
+ </div>
+</section>
+
+<div class="countdown-wrap">
+ <div class="countdown-box">
+   <div class="countdown-left">
+     <div class="eyebrow" style="color:#f4b400">New Batch Alert</div>
+     <h2>Next Batch Starts 22 August 2026</h2>
+     <p>Seats are filling up for our next batch, 8:00 PM – 10:00 PM. Reserve your spot now, or join a free live demo lecture first to experience the training before you enroll.</p>
+     <div class="ctas">
+       <a class="btn primary" href="join.html">Reserve My Seat</a>
+       <a class="btn secondary" href="demo.html">Join Free Demo</a>
+     </div>
+   </div>
+   <div class="timer" id="batchTimer">
+     <div><b id="cd-days">00</b><span>Days</span></div>
+     <div><b id="cd-hours">00</b><span>Hours</span></div>
+     <div><b id="cd-mins">00</b><span>Minutes</span></div>
+     <div><b id="cd-secs">00</b><span>Seconds</span></div>
+   </div>
+ </div>
+</div>
+
+<div class="final">
+ <div class="final-box">
+   <h2>Invest in Skills. Build Your Future.</h2>
+   <p>Start your structured engineering learning journey with Nishlab Creations.</p>
+   <a class="btn primary" href="join.html">Get Started</a>
+ </div>
+</div>
+
+<script>
+(function(){
+  var target = new Date("2026-08-22T20:00:00+05:30").getTime();
+  function tick(){
+    var now = new Date().getTime();
+    var diff = target - now;
+    var els = {d:document.getElementById('cd-days'),h:document.getElementById('cd-hours'),m:document.getElementById('cd-mins'),s:document.getElementById('cd-secs')};
+    if(!els.d) return;
+    if(diff <= 0){
+      els.d.textContent='00'; els.h.textContent='00'; els.m.textContent='00'; els.s.textContent='00';
+      return;
+    }
+    var d = Math.floor(diff/(1000*60*60*24));
+    var h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    var m = Math.floor((diff%(1000*60*60))/(1000*60));
+    var s = Math.floor((diff%(1000*60))/1000);
+    els.d.textContent = String(d).padStart(2,'0');
+    els.h.textContent = String(h).padStart(2,'0');
+    els.m.textContent = String(m).padStart(2,'0');
+    els.s.textContent = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
+
+<footer>
+ <div class="footer-inner">
+   <div class="footer-brand">NISHLAB <span>CREATIONS</span><br><small>LEARN. CREATE. GET HIRED.</small></div>
+   <div>Online Engineering Software Training Institute</div>
+   <div>+91 84240 99617 · nishad@nishlabcreations.com</div>
+ </div>
+</footer>
+
+</body>
+</html>

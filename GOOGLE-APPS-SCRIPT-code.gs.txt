@@ -1,0 +1,70 @@
+/**
+ * NISHLAB CREATIONS — Website Form → Google Sheet connector
+ * -----------------------------------------------------------
+ * Setup:
+ * 1. Open your Google Sheet → Extensions → Apps Script
+ * 2. Delete the default code and paste this entire file
+ * 3. Deploy → New deployment → Web app
+ *      Execute as: Me
+ *      Who has access: Anyone
+ * 4. Copy the deployment URL (ends in /exec) and send it back
+ *
+ * This script writes every form submission (Join Us enquiry form
+ * or Free Demo registration form) as a new row into a sheet tab
+ * named "Website Leads". If that tab doesn't exist yet, it will
+ * be created automatically the first time a form is submitted.
+ */
+
+const SHEET_NAME = "Website Leads";
+
+function doPost(e) {
+  try {
+    const data = JSON.parse(e.postData.contents);
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    let sheet = ss.getSheetByName(SHEET_NAME);
+
+    if (!sheet) {
+      sheet = ss.insertSheet(SHEET_NAME);
+      sheet.appendRow([
+        "Timestamp",
+        "Form Type",
+        "Full Name",
+        "Phone",
+        "Email",
+        "Education",
+        "Course Interest",
+        "Demo Day",
+        "Message"
+      ]);
+      sheet.setFrozenRows(1);
+    }
+
+    sheet.appendRow([
+      new Date(),
+      data.formType || "",
+      data.name || "",
+      data.phone || "",
+      data.email || "",
+      data.education || "",
+      data.courseInterest || "",
+      data.demoDay || "",
+      data.message || ""
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: "error", error: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+// Optional: lets you open the /exec URL in a browser to sanity-check it's live
+function doGet(e) {
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: "Nishlab Creations form receiver is live" }))
+    .setMimeType(ContentService.MimeType.JSON);
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nishlab Creations | About Us</title>
+<style>
+:root{--n:#061735;--n2:#0d2c5c;--b:#2166c2;--g:#f4b400;--bg:#f5f7fb;--w:#fff;--t:#172033;--m:#64748b;--l:#dce4ef;--green:#15965a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--t)}
+a{text-decoration:none}.header{position:sticky;top:0;z-index:50;background:rgba(6,23,53,.98);color:#fff}.nav{max-width:1300px;margin:auto;min-height:76px;padding:9px 22px;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;min-width:220px}.brand img{width:50px;height:50px;object-fit:contain;background:#000;border-radius:7px}.brand b{display:block;letter-spacing:2px}.brand small{color:var(--g);letter-spacing:2.5px}
+.menu{display:flex;justify-content:center;gap:3px;flex:1}.menu a{color:#dce6f5;font-size:12px;padding:10px;border-radius:8px}.menu a:hover,.menu a.active{background:var(--n2);color:#fff}.login{background:var(--g);color:var(--n);font-weight:900;padding:12px 15px;border-radius:8px;font-size:12px}
+.hero{background:linear-gradient(125deg,#030c1d,#0b2857 65%,#123d7d);color:#fff}.hero-in{max-width:1300px;margin:auto;padding:75px 22px;display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.kicker{color:#ffd75c;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font-size:56px;line-height:1.03;letter-spacing:-2px;margin:12px 0}.hero h1 span{color:var(--g)}.hero p{max-width:720px;color:#d5e0ef;font-size:16px;line-height:1.8}.buttons{display:flex;gap:10px;margin-top:25px;flex-wrap:wrap}.btn{display:inline-block;padding:13px 18px;border-radius:9px;font-size:12px;font-weight:900}.gold{background:var(--g);color:var(--n)}.outline{border:1px solid rgba(255,255,255,.3);color:#fff}
+.hero-card{background:#fff;color:var(--t);padding:28px;border-radius:20px;box-shadow:0 25px 70px rgba(0,0,0,.25)}.hero-card h2{color:var(--n);margin:0 0 18px;font-size:23px}.point{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--l)}.point:last-child{border-bottom:0}.icon{width:35px;height:35px;border-radius:9px;background:#fff3c7;color:#8a6200;display:grid;place-items:center;font-weight:900;flex:none}.point b{font-size:13px}.point span{display:block;color:var(--m);font-size:11px;margin-top:2px}
+.wrap{max-width:1300px;margin:auto;padding:65px 22px}.intro{text-align:center;max-width:800px;margin:0 auto 40px}.intro .kicker{color:#a87400}.intro h2{font-size:37px;color:var(--n);margin:8px}.intro p{color:var(--m);font-size:14px;line-height:1.7}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:#fff;border:1px solid var(--l);border-radius:17px;padding:29px;box-shadow:0 12px 35px rgba(6,23,53,.05)}.panel h3{margin:0 0 12px;color:var(--n);font-size:22px}.panel p{color:var(--m);font-size:13px;line-height:1.8}.quote{border-left:4px solid var(--g);background:#fff8df;padding:18px;margin-top:20px;color:#624d00;font-weight:800;font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:25px}.stat{background:var(--n);color:#fff;padding:20px;border-radius:13px}.stat b{display:block;color:var(--g);font-size:28px}.stat span{font-size:11px;color:#d5e0ef}
+.why{margin-top:25px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.why-card{background:#fff;border:1px solid var(--l);padding:23px;border-radius:14px}.why-card h3{color:var(--n);font-size:16px;margin:0 0 7px}.why-card p{color:var(--m);font-size:12px;line-height:1.7;margin:0}
+.experience{margin-top:25px;background:linear-gradient(120deg,var(--n),var(--n2));color:#fff;border-radius:19px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:30px}.experience h2{font-size:29px;margin:0 0 10px}.experience p{color:#d5e0ef;font-size:13px;line-height:1.75}.tag{display:inline-block;background:rgba(244,180,0,.13);color:#ffd75c;border:1px solid rgba(244,180,0,.35);padding:7px 10px;border-radius:7px;font-size:10px;font-weight:900;margin:3px}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}.value{background:#fff;border:1px solid var(--l);border-radius:15px;padding:25px}.value h3{color:var(--n);margin:0 0 8px}.value p{color:var(--m);font-size:12px;line-height:1.7;margin:0}
+.cta{margin-top:45px;background:var(--n);color:#fff;border-radius:20px;text-align:center;padding:45px 22px}.cta h2{font-size:34px;margin:0 0 8px}.cta p{color:#d5e0ef;font-size:13px;margin:0 0 20px}
+footer{background:#040d20;color:#cbd6e5;padding:32px 22px}.foot{max-width:1300px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:11px}.foot b{color:#fff;letter-spacing:2px}.foot b span{color:var(--g)}
+@media(max-width:900px){.menu{display:none}.login{margin-left:auto}.hero-in,.story,.experience{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.values{grid-template-columns:1fr}}
+@media(max-width:600px){.brand div{display:none}.hero-in,.wrap{padding-left:16px;padding-right:16px}.hero h1{font-size:40px}.why{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="nav">
+<a class="brand" href="index.html"><img src="nishlab-logo.png" alt="Nishlab Creations"><div><b>NISHLAB</b><small>CREATIONS</small></div></a>
+<nav class="menu"><a href="index.html">Home</a><a href="courses.html">Courses</a><a class="active" href="about.html">About Us</a><a href="workshops.html">Workshops</a><a href="join.html">Join Us</a><a href="videos.html">Free Videos</a><a href="plans.html">Plans</a><a href="demo.html">Free Demo</a></nav>
+<a class="login" href="login.html">Student Login</a>
+</div></header>
+
+<section class="hero"><div class="hero-in">
+<div>
+<div class="kicker">About Nishlab Creations</div>
+<h1>We Don't Just Teach Software.<br><span>We Build Engineers.</span></h1>
+<p>Nishlab Creations is an online engineering software training institute focused on practical CAD, CAE, automation and career readiness. Our structured programs connect software learning with projects, engineering workflows and professional preparation.</p>
+<div class="buttons"><a class="btn gold" href="courses.html">EXPLORE COURSES</a><a class="btn outline" href="join.html">JOIN US</a></div>
+</div>
+<div class="hero-card">
+<h2>Our Approach</h2>
+<div class="point"><div class="icon">01</div><div><b>Learn</b><span>Understand the software and engineering fundamentals.</span></div></div>
+<div class="point"><div class="icon">02</div><div><b>Practice</b><span>Apply concepts through structured hands-on work.</span></div></div>
+<div class="point"><div class="icon">03</div><div><b>Create</b><span>Build industry-style capstone projects.</span></div></div>
+<div class="point"><div class="icon">04</div><div><b>Get Hired</b><span>Prepare your resume, portfolio and interview skills.</span></div></div>
+</div>
+</div></section>
+
+<main class="wrap">
+<div class="intro"><div class="kicker">Who We Are</div><h2>Engineering Learning With a Career Focus</h2><p>Nishlab Creations brings design, simulation, automation and career preparation into one structured learning ecosystem.</p></div>
+
+<section class="story">
+<div class="panel"><h3>Our Mission</h3><p>To make engineering software education more practical, structured and career-oriented. Students should not finish a course knowing only commands; they should be able to use those tools to create engineering work and explain it confidently.</p><div class="quote">“Learn the tool. Build the skill. Create the project. Become industry ready.”</div></div>
+<div class="panel"><h3>What Makes Us Different</h3><p>Our curriculum connects CAD, CAE, automation and career preparation. Each technical module has a practical capstone, while the final career module focuses on resume, portfolio, LinkedIn and interview preparation.</p><p>The complete professional program is structured as <b>204 hours across 102 training days</b>, with 2 hours of structured training per day.</p></div>
+</section>
+
+<div class="stats">
+<div class="stat"><b>7</b><span>Professional Modules</span></div><div class="stat"><b>204</b><span>Total Training Hours</span></div><div class="stat"><b>102</b><span>Training Days</span></div><div class="stat"><b>7</b><span>Industry Capstone Projects</span></div>
+</div>
+
+<div class="intro" style="margin-top:65px"><div class="kicker">Why Nishlab Creations</div><h2>Built Around Practical Outcomes</h2></div>
+<div class="why">
+<div class="why-card"><h3>Industry-Style Projects</h3><p>Each module ends with a capstone project designed to become useful portfolio material rather than only a tutorial exercise.</p></div>
+<div class="why-card"><h3>Hinglish-First Teaching</h3><p>Complex concepts are explained clearly through Hinglish-first instruction, structured notes and recorded sessions for revision.</p></div>
+<div class="why-card"><h3>Career Module Built In</h3><p>Resume, portfolio, LinkedIn positioning and mock interviews are part of the curriculum, not an afterthought.</p></div>
+<div class="why-card"><h3>Mentorship & Support</h3><p>Students receive live project mentorship, recorded lessons and lifetime doubt support as part of the learning experience.</p></div>
+</div>
+
+<section class="experience">
+<div><div class="kicker">Hands-On Industry Perspective</div><h2>Learn From Real Engineering Experience</h2><p>The Nishlab program is built and taught around hands-on CAD/CAE industry experience, including large-scale US solar permit drawing work and XR/VR product design experience.</p></div>
+<div>
+<div class="tag">CAD DESIGN</div><div class="tag">CAE / SIMULATION</div><div class="tag">AUTOMATION</div><div class="tag">ENGINEERING DRAWINGS</div><div class="tag">PROJECT MENTORSHIP</div><div class="tag">CAREER PREPARATION</div>
+<p>Our focus is to connect classroom learning with the type of work students need to demonstrate during internships, projects and job interviews.</p>
+</div>
+</section>
+
+<div class="intro" style="margin-top:65px"><div class="kicker">Our Values</div><h2>What We Believe</h2></div>
+<div class="values">
+<div class="value"><h3>Practical Over Theoretical</h3><p>Engineering skills become stronger when concepts are applied to real tasks and projects.</p></div>
+<div class="value"><h3>Skills Over Certificates</h3><p>A certificate should support demonstrated capability, not replace it.</p></div>
+<div class="value"><h3>Continuous Learning</h3><p>Recorded lessons, notes, mentorship and doubt support encourage students to keep improving.</p></div>
+</div>
+
+<section class="cta"><h2>Ready to Build Your Engineering Career?</h2><p>Explore the complete curriculum and choose the skill path that fits your goals.</p><a class="btn gold" href="courses.html">VIEW COMPLETE SYLLABUS</a></section>
+</main>
+
+<footer><div class="foot"><div><b>NISHLAB <span>CREATIONS</span></b><br>LEARN. CREATE. GET HIRED.</div><div>Online Engineering Software Training Institute</div><div>+91 84240 99617 · nishad@nishlabcreations.com</div></div></footer>
+</body>
+</html>
